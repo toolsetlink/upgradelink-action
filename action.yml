@@ -1,0 +1,23 @@
+name: 'Fetch JSON and Call API'
+description: 'Fetch JSON from URL and call API with the data'
+inputs:
+  source-url:
+    description: 'URL to fetch JSON data from'
+    required: true
+  api-url:
+    description: 'API endpoint to call'
+    required: true
+  access-key:
+    description: 'X-AccessKey for API authentication'
+    required: true
+  tauri-key:
+    description: 'tauriKey parameter for API'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.source-url }}
+    - ${{ inputs.api-url }}
+    - ${{ inputs.access-key }}
+    - ${{ inputs.tauri-key }}
