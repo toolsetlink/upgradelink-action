@@ -20,9 +20,12 @@ def fetch_json(url):
         sys.exit(1)
 
 
-def call_api(api_url, access_key, tauri_key, json_data):
+def call_api(access_key, tauri_key, json_data):
     """调用API并传递JSON数据"""
     try:
+
+        api_url = 'http://xg.api.upgrade.toolsetlink.com/v1/tauri/github-aciton/upload'
+
         logger.info(f"Calling API: {api_url}")
 
         # 构建API请求URL，添加tauriKey参数
@@ -47,20 +50,19 @@ def call_api(api_url, access_key, tauri_key, json_data):
 
 def main():
     # 从命令行参数获取输入
-    if len(sys.argv) != 5:
-        logger.error("Usage: python main.py <source-url> <api-url> <access-key> <tauri-key>")
+    if len(sys.argv) != 4:
+        logger.error("Usage: python main.py <source-url> <access-key> <tauri-key>")
         sys.exit(1)
 
     source_url = sys.argv[1]
-    api_url = sys.argv[2]
-    access_key = sys.argv[3]
-    tauri_key = sys.argv[4]
+    access_key = sys.argv[2]
+    tauri_key = sys.argv[3]
 
     # 获取JSON数据
     json_data = fetch_json(source_url)
 
     # 调用API
-    call_api(api_url, access_key, tauri_key, json_data)
+    call_api(access_key, tauri_key, json_data)
 
 
 if __name__ == "__main__":
