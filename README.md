@@ -13,7 +13,7 @@
     runs-on: ubuntu-latest
     steps:
       - name: Send a request to UpgradeLink
-        uses: toolsetlink/upgradelink-action@v4
+        uses: toolsetlink/upgradelink-action@v5
         with:
           source-url: 'https://github.com/toolsetlink/tauri-demo/releases/download/tauri-demo-v${{ needs.publish-tauri.outputs.appVersion }}/latest.json'
           access-key: ${{ secrets.UPGRADE_LINK_ACCESS_KEY }}  # ACCESS_KEY  密钥key
