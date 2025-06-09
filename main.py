@@ -50,8 +50,8 @@ def call_api(access_key, tauri_key, github_token, json_data):
 
 def main():
     # 从命令行参数获取输入
-    if len(sys.argv) != 4:
-        logger.error("Usage: python main.py <source-url> <access-key> <tauri-key>")
+    if len(sys.argv) != 5:
+        logger.error("Usage: python main.py <source-url> <access-key> <tauri-key> <github-token>")
         sys.exit(1)
 
     source_url = sys.argv[1]
