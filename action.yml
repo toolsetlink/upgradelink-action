@@ -10,6 +10,9 @@ inputs:
   tauri-key:
     description: 'tauriKey parameter for API'
     required: true
+  github-token:
+    description: 'GITHUB_TOKEN'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -17,3 +20,4 @@ runs:
     - ${{ inputs.source-url }}
     - ${{ inputs.access-key }}
     - ${{ inputs.tauri-key }}
+    - ${{ inputs.github-token }}

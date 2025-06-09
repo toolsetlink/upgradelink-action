@@ -44,7 +44,7 @@ def test_call_api_real():
         }
 
     # 调用真实API
-    result = call_api( 'mui2W50H1j-OC4xD6PgQag',  'a0jtz0HUwL66r7gCGvbMKQ', test_data)
+    result = call_api( 'mui2W50H1j-OC4xD6PgQag',  'a0jtz0HUwL66r7gCGvbMKQ','github', test_data)
 
     # 验证响应
     assert result.status_code == 200

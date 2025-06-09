@@ -20,7 +20,7 @@ def fetch_json(url):
         sys.exit(1)
 
 
-def call_api(access_key, tauri_key, json_data):
+def call_api(access_key, tauri_key, github_token, json_data):
     """调用API并传递JSON数据"""
     try:
 
@@ -28,8 +28,8 @@ def call_api(access_key, tauri_key, json_data):
 
         logger.info(f"Calling API: {api_url}")
 
-        # 构建API请求URL，添加tauriKey参数
-        params = {'tauriKey': tauri_key}
+        # 构建API请求URL，添加参数
+        params = {'tauriKey': tauri_key, 'githubToken': github_token}
 
         # 设置请求头
         headers = {
@@ -57,12 +57,13 @@ def main():
     source_url = sys.argv[1]
     access_key = sys.argv[2]
     tauri_key = sys.argv[3]
+    github_token = sys.argv[4]
 
     # 获取JSON数据
     json_data = fetch_json(source_url)
 
     # 调用API
-    call_api(access_key, tauri_key, json_data)
+    call_api(access_key, tauri_key, github_token, json_data)
 
 
 if __name__ == "__main__":

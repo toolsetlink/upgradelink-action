@@ -18,6 +18,7 @@
           source-url: 'https://github.com/toolsetlink/tauri-demo/releases/download/tauri-demo-v${{ needs.publish-tauri.outputs.appVersion }}/latest.json'
           access-key: ${{ secrets.UPGRADE_LINK_ACCESS_KEY }}  # ACCESS_KEY  密钥key
           tauri-key: ${{ secrets.UPGRADE_LINK_TAURI_KEY }}    # TAURI_KEY tauri 应用唯一标识
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 
@@ -30,6 +31,7 @@
 - **source-url**：需指向包含 Tauri 应用版本信息的 JSON 文件（通常为 Tauri 打包生成的 `latest.json`）
 - **access-key**：在 UpgradeLink 平台创建应用后生成的访问密钥，用于身份验证
 - **tauri-key**：Tauri 应用在 UpgradeLink 平台的唯一标识，与应用配置绑定
+- **github-token**：GITHUB TOKEN
 
 
 ### 最佳实践
