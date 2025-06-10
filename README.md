@@ -10,6 +10,8 @@
 ```yaml
   upgradeLink-upload:
     needs:  publish-tauri  # 依赖于publish-tauri作业完成
+    permissions:
+      contents: write 
     runs-on: ubuntu-latest
     steps:
       - name: Send a request to UpgradeLink
